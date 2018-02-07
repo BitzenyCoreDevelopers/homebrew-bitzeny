@@ -14,6 +14,8 @@ class Bitzenyd < Formula
   depends_on "libevent"
   depends_on "miniupnpc"
   depends_on "openssl"
+  depends_on "protobuf"
+  depends_on "qrencode"
   depends_on "bsdmainutils" => :build unless OS.mac? # `hexdump` from bsdmainutils required to compile tests
   depends_on "zeromq"
   needs :cxx11
@@ -26,6 +28,7 @@ class Bitzenyd < Formula
       ENV.delete("SDKROOT")
     end
 
+    system "echo #{prefix}"
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
