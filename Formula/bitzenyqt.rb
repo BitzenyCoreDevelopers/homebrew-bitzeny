@@ -14,11 +14,15 @@ class Bitzenyqt < Formula
   depends_on "libevent"
   depends_on "miniupnpc"
   depends_on "openssl"
-  depends_on "protobuf"
 	depends_on "qrencode"
   depends_on "bsdmainutils" => :build unless OS.mac? # `hexdump` from bsdmainutils required to compile tests
   depends_on "zeromq"
   needs :cxx11
+
+	depends_on "qt5"
+	depends_on "qrencode"
+	depends_on "protobuf"
+	depends_on "gettext" => :recommended
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.
