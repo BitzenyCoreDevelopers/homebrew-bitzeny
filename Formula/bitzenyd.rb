@@ -36,7 +36,7 @@ class Bitzenyd < Formula
                           "--disable-gui-tests",
                           "--with-gui=no",
                           "--without-libs",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}"
+                          "--with-boost-libdir=#{Formula["boost"].opt_lib}",
                           "--prefix=#{prefix}"
     system "make", "install"
     pkgshare.install "share/rpcuser"
