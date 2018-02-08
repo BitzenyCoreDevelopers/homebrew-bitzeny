@@ -1,4 +1,4 @@
-class Bitzenyd < Formula
+class BitzenyQt < Formula
   desc "Bitzeny qt wallet"
   homepage "https://bitzeny.info"
   url "https://github.com/BitzenyCoreDevelopers/bitzeny/releases/download/z2.0.0a/bitzeny-2.0.0.tar.gz"
