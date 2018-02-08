@@ -37,7 +37,7 @@ class Bitzenyqt < Formula
                           "--without-utils",
                           "--disable-bench",
                           "--without-libs",
-                          "--with=gui",
+                          "--with-gui=auto",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",
                           "--prefix=#{prefix}"
     system "make", "install"
