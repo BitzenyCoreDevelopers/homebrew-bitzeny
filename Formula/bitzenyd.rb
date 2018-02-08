@@ -27,7 +27,6 @@ class Bitzenyd < Formula
       ENV.delete("SDKROOT")
     end
 
-    system "echo #{prefix}"
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

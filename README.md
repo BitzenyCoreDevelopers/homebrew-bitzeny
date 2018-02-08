@@ -4,5 +4,11 @@
 
 ```
 $ brew tap BitzenyCoreDevelopers/bitzeny
+$ brew install <Formula>
 ```
 
+## Formula
+
+- `bitzenyd`
+- `bitzeny-qt`
+- `cpuminer-yescrypt`
