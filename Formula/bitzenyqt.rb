@@ -34,6 +34,8 @@ class Bitzenyqt < Formula
                           "--disable-tests",
                           "--disable-gui-tests",
                           "--without-daemon",
+                          "--without-utils",
+                          "--disable-bench",
                           "--without-libs",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",
                           "--prefix=#{prefix}"
