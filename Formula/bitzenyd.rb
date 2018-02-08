@@ -34,6 +34,7 @@ class Bitzenyd < Formula
                           "--disable-gui-tests",
                           "--with-gui=no",
                           "--without-libs",
+                          "--disable-bench",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",
                           "--prefix=#{prefix}"
     system "make", "install"
