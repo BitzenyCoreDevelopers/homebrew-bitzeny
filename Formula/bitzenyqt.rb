@@ -32,6 +32,7 @@ class Bitzenyqt < Formula
       ENV.delete("SDKROOT")
     end
 
+		ENV.append "CXXFLAGS", "-std=c++11"
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
