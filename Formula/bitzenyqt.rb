@@ -1,5 +1,5 @@
-class Bitzenyd < Formula
-  desc "Bitzeny daemon"
+class Bitzenyqt < Formula
+  desc "Bitzeny qt wallet"
   homepage "https://bitzeny.info"
   url "https://github.com/BitzenyCoreDevelopers/bitzeny/releases/download/z2.0.0a/bitzeny-2.0.0.tar.gz"
   version "2.0.0"
@@ -14,9 +14,15 @@ class Bitzenyd < Formula
   depends_on "libevent"
   depends_on "miniupnpc"
   depends_on "openssl"
+	depends_on "qrencode"
   depends_on "bsdmainutils" => :build unless OS.mac? # `hexdump` from bsdmainutils required to compile tests
   depends_on "zeromq"
   needs :cxx11
+
+	depends_on "qt5"
+	depends_on "qrencode"
+	depends_on "protobuf"
+	depends_on "gettext" => :recommended
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.
@@ -26,14 +32,17 @@ class Bitzenyd < Formula
       ENV.delete("SDKROOT")
     end
 
+		ENV.append "CXXFLAGS", "-std=c++11"
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--disable-tests",
                           "--disable-gui-tests",
-                          "--with-gui=no",
-                          "--without-libs",
+                          "--without-daemon",
+                          "--without-utils",
                           "--disable-bench",
+                          "--without-libs",
+                          "--with-gui",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",
                           "--prefix=#{prefix}"
     system "make", "install"
