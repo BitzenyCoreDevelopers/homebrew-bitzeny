@@ -26,6 +26,8 @@ class CpuminerMacchky < Formula
       ENV.delete("SDKROOT")
     end
 
+		ENV.append "CFLAGS", "-O3"
+		ENV.append "CXXFLAGS", "-O3"
 		system "mkdir m4" if OS.mac?
 		system "cp #{prefix}/../../../opt/curl/share/aclocal/libcurl.m4 m4/" if OS.mac?
 		system "echo 'ACLOCAL_AMFLAGS = -I m4' >> Makefile.am" if OS.mac?
@@ -34,8 +36,7 @@ class CpuminerMacchky < Formula
 		system "./nomacro.pl" if OS.mac?
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "CFLAGS='-O3'"
+                          "--prefix=#{prefix}"
     system "make", "install"
     pkgshare.install "share/rpcuser"
   end
