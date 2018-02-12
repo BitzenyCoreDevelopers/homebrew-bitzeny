@@ -16,7 +16,7 @@ class CpuminerMacchky < Formula
   #depends_on "openssl"
   #depends_on "bsdmainutils" => :build unless OS.mac? # `hexdump` from bsdmainutils required to compile tests
   #depends_on "zeromq"
-  #needs :cxx11
+  needs :cxx11
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.
