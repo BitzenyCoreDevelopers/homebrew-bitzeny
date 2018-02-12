@@ -26,12 +26,12 @@ class CpuminerMacchky < Formula
       ENV.delete("SDKROOT")
     end
 
-		system "mkdir m4" unless OS.mac?
-		system "cp $(brew --prefix)/opt/curl/share/aclocal/libcurl.m4 m4/" unless OS.mac?
-		system "echo 'ACLOCAL_AMFLAGS = -I m4' >> Makefile.am" unless OS.mac?
-		system "sed -ie 's/aclocal/aclocal -I m4/' autogen.sh" unless OS.mac?
+		system "mkdir m4" if OS.mac?
+		system "cp $(brew --prefix)/opt/curl/share/aclocal/libcurl.m4 m4/" if OS.mac?
+		system "echo 'ACLOCAL_AMFLAGS = -I m4' >> Makefile.am" if OS.mac?
+		system "sed -ie 's/aclocal/aclocal -I m4/' autogen.sh" if OS.mac?
     system "./autogen.sh"
-		system "./nomacro.pl" unless OS.mac?
+		system "./nomacro.pl" if OS.mac?
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
