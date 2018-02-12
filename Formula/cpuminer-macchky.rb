@@ -1,9 +1,9 @@
 class CpuminerMacchky < Formula
   desc "Bitzeny cpu miner (macchky)"
   homepage "https://github.com/macchky/cpuminer"
-	url "https://github.com/macchky/cpuminer/archive/v2.6.0.tar.gz"
+	url "https://github.com/macchky/cpuminer/archive/master.zip"
 	version "2.6.0"
-  sha256 "64ea9f6bcedb1f083600461251fd5c088adc4e098525d8aa9f554a4d0c06961e"
+  sha256 "17d6653347c5ae6e05a9c698942f210d02cac67ba7abc3091e07fd96b24e9d67"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -32,10 +32,10 @@ class CpuminerMacchky < Formula
 		system "mkdir m4" if OS.mac?
 		system "cp #{prefix}/../../../opt/curl/share/aclocal/libcurl.m4 m4/" if OS.mac?
 		system "echo 'ACLOCAL_AMFLAGS = -I m4' >> Makefile.am" if OS.mac?
-		system "sed -ie 's/INCLUDES/AM_CPPFLAGS/g' Makefile.am" if OS.mac?
+		#system "sed -ie 's/INCLUDES/AM_CPPFLAGS/g' Makefile.am" if OS.mac?
 		system "sed -ie 's/aclocal/aclocal -I m4/g' autogen.sh" if OS.mac?
     system "./autogen.sh"
-		system "./nomacro.pl" if OS.mac?
+		system "./nomacro.pl"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
