@@ -31,6 +31,7 @@ class CpuminerMacchky < Formula
 		system "echo 'ACLOCAL_AMFLAGS = -I m4' >> Makefile.am" unless OS.mac?
 		system "sed -ie 's/aclocal/aclocal -I m4/' autogen.sh" unless OS.mac?
     system "./autogen.sh"
+		system "./nomacro.pl" unless OS.mac?
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
