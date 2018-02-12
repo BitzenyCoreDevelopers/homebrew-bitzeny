@@ -32,8 +32,8 @@ class CpuminerMacchky < Formula
 		system "mkdir m4" if OS.mac?
 		system "cp #{prefix}/../../../opt/curl/share/aclocal/libcurl.m4 m4/" if OS.mac?
 		system "echo 'ACLOCAL_AMFLAGS = -I m4' >> Makefile.am" if OS.mac?
+		system "sed -ie 's/INCLUDES/AM_CPPFLAGS/' Makefile.am" if OS.mac?
 		system "sed -ie 's/aclocal/aclocal -I m4/' autogen.sh" if OS.mac?
-		system "sed -ie 's/INCLUDES/AM_CPPFLAGS/' autogen.sh" if OS.mac?
     system "./autogen.sh"
 		system "./nomacro.pl" if OS.mac?
     system "./configure", "--disable-dependency-tracking",
