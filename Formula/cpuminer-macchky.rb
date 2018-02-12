@@ -28,6 +28,7 @@ class CpuminerMacchky < Formula
 
 		ENV.append "CFLAGS", "-O3"
 		ENV.append "CXXFLAGS", "-O3"
+		ENV.append "CXXFLAGS", "-std=c++11"
 		system "mkdir m4" if OS.mac?
 		system "cp #{prefix}/../../../opt/curl/share/aclocal/libcurl.m4 m4/" if OS.mac?
 		system "echo 'ACLOCAL_AMFLAGS = -I m4' >> Makefile.am" if OS.mac?
