@@ -1,4 +1,4 @@
-class MacchkyCpuminer < Formula
+class CpuminerMacchky < Formula
   desc "Bitzeny cpu miner (macchky)"
   homepage "https://github.com/macchky/cpuminer"
 	url "https://github.com/macchky/cpuminer/archive/v2.6.0.tar.gz"
