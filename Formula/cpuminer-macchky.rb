@@ -39,7 +39,6 @@ class CpuminerMacchky < Formula
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
-    pkgshare.install "share/rpcuser"
   end
 
   test do
