@@ -3,7 +3,7 @@ class CpuminerMacchky < Formula
   homepage "https://github.com/macchky/cpuminer"
 	url "https://github.com/macchky/cpuminer/archive/v2.6.0.tar.gz"
 	version "2.6.0"
-  sha256 "64ea9f6bcedb1f083600461251fd5c088adc4e098525d8aa9f554a4d0c06961e<Paste>"
+  sha256 "64ea9f6bcedb1f083600461251fd5c088adc4e098525d8aa9f554a4d0c06961e"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
