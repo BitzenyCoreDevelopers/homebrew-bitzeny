@@ -26,8 +26,10 @@ class CpuminerMacchky < Formula
       ENV.delete("SDKROOT")
     end
 
-		ENV.append "CFLAGS", "-O3"
-		ENV.append "CXXFLAGS", "-O3"
+		ENV.append "CFLAGS", "-Ofast -march=native -mtune=native -mfpmath=both"
+		ENV.append "CFLAGS", "-funroll-loops -fomit-frame-pointer -fstrength-reduce -fomg-optimize"
+		ENV.append "CXXFLAGS", "-Ofast -march=native -mtune=native -mfpmath=both"
+		ENV.append "CXXFLAGS", "-funroll-loops -fomit-frame-pointer -fstrength-reduce -fomg-optimize"
 		ENV.append "CXXFLAGS", "-std=c++11"
 		system "mkdir m4" if OS.mac?
 		system "cp #{prefix}/../../../opt/curl/share/aclocal/libcurl.m4 m4/" if OS.mac?
