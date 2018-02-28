@@ -27,3 +27,8 @@ coindであるbitzenydと、bitzeny-cli、bitzeny-txをインストールでき�
 またsystemdやplistに対する自動起動などの機能も追加済みです。
 通常は、サービスを提供するエンジニア向けです。
 
+### `cpuminer-macchky`
+
+macchkey氏が作成された、yescryptのcpuminerです。
+bitzeny 2.0に対応しています。
+https://github.com/macchky/cpuminer
