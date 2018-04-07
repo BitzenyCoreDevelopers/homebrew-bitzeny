@@ -1,9 +1,9 @@
 class CpuminerMacchky < Formula
   desc "Bitzeny cpu miner (macchky)"
   homepage "https://github.com/macchky/cpuminer"
-	url "https://github.com/macchky/cpuminer/archive/master.zip"
-	version "2.6.0"
-  sha256 "17d6653347c5ae6e05a9c698942f210d02cac67ba7abc3091e07fd96b24e9d67"
+	url "https://github.com/macchky/cpuminer/archive/ea9175b7987628990d234b40a84bfde784d1f685.zip"
+	version "2.6.0.1"
+  sha256 "d2a0388e99fd018454a5da596a9419526c2c46bbc0fa5a2aa0894990c634fd3c"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
